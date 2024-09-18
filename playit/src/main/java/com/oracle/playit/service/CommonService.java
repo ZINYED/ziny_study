@@ -6,4 +6,6 @@ public interface CommonService {
 
 	int join(UserInfo userInfo);
 
+	UserInfo login(UserInfo userInfo);
+
 }

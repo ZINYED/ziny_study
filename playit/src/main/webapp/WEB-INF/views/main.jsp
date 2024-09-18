@@ -11,30 +11,30 @@
 		location.href="/join_form";
 	}
 	
-	function login() {
-		location.href="/login";
-	}
 
 
 </script>
 </head>
 <body>
 	<div>
-		<table>
-			<tr>
-				<th>아이디</th><td><input type="text"></td>
-			</tr>
-			<tr>
-				<th>비밀번호</th><td><input type="password"></td>
-			</tr>
-			<tr>
-				<td><input type="button" value="로그인" onclick="login()"></td>
-				<td><input type="button" value="아이디/비밀번호 찾기"></td>
-			</tr>
-			<tr>
-				<td><input type="button" value="회원가입" onclick="join_form()"></td>
-			</tr>
-		</table>
+		<form action="login" method="post">
+			<table>
+				<tr>
+					<th>ID</th><td><input type="text" name="user_id"></td>
+				</tr>
+				<tr>
+					<th>Password</th><td><input type="password" name="user_pw"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Login"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="아이디 찾기"></td>
+					<td><input type="button" value="비밀번호 찾기"></td>
+					<td><input type="button" value="회원가입" onclick="join_form()"></td>
+				</tr>
+			</table>
+		</form>
 	</div>
 </body>
 </html>

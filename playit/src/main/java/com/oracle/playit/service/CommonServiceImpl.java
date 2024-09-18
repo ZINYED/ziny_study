@@ -13,6 +13,7 @@ public class CommonServiceImpl implements CommonService {
 
 	private	final	CommonDao	cd;
 
+	// 회원가입
 	@Override
 	public int join(UserInfo userInfo) {
 		System.out.println("join Service Start");
@@ -21,6 +22,17 @@ public class CommonServiceImpl implements CommonService {
 		result = cd.join(userInfo);
 		
 		return result;
+	}
+
+	// 로그인
+	@Override
+	public UserInfo login(UserInfo userInfo) {
+		System.out.println("login Service Start");
+		
+		UserInfo userCheck = new UserInfo();
+		userCheck = cd.login(userInfo);
+		
+		return userCheck;
 	}
 	
 }

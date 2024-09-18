@@ -6,4 +6,6 @@ public interface CommonDao {
 
 	int join(UserInfo userInfo);
 
+	UserInfo login(UserInfo userInfo);
+
 }

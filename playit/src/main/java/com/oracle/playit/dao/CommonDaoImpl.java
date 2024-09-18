@@ -13,6 +13,7 @@ public class CommonDaoImpl implements CommonDao {
 	
 	private	final	SqlSession	session;
 	
+	// 회원가입
 	@Override
 	public int join(UserInfo userInfo) {
 		System.out.println("join Dao Start");
@@ -27,6 +28,23 @@ public class CommonDaoImpl implements CommonDao {
 		}
 
 		return result;
+	}
+
+	// 로그인
+	@Override
+	public UserInfo login(UserInfo userInfo) {
+		System.out.println("login Dao Start");
+		
+		UserInfo userCheck = new UserInfo();
+		
+		try {
+			userCheck = session.selectOne("userCheck", userInfo);
+			System.out.println("login Dao selectResult -> " + userCheck);
+		} catch (Exception e) {
+			System.out.println("login Dao Exception -> " + e.getMessage());
+		}
+		
+		return userCheck;
 	}
 	
 	

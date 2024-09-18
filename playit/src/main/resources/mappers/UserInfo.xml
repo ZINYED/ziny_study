@@ -5,7 +5,16 @@
 <mapper namespace="com.oracle.playit.dto.UserInfo">
 	<insert id="userInsert" parameterType="UserInfo">
 		INSERT INTO user_info 
-		VALUES (#{user_id}, #{user_pw}, #{user_name}, #{user_gender}, #{user_phone}, 
-				#{user_birth}, #{user_email}, 'user', '', '', 'N', #{user_nick})
+		VALUES (#{user_id}, #{user_pw}, #{user_name}, #{user_gender}, #{user_phone}, #{user_birth}, 
+				#{user_email}, 'user', '', '', 'N', #{user_nick})
 	</insert>
+	
+	<select id="userCheck" parameterType="UserInfo" resultType="UserInfo">
+		SELECT	*
+		FROM	user_info
+		WHERE	user_id = #{user_id}
+		AND		user_pw = #{user_pw}
+	</select>
+	
+	
 </mapper>
