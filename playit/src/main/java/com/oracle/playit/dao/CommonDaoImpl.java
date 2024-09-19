@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CommonDaoImpl implements CommonDao {
 	
-	private	final	SqlSession	session;
+	private	final	SqlSession	sqls;
 	
 	// 회원가입
 	@Override
@@ -21,7 +21,7 @@ public class CommonDaoImpl implements CommonDao {
 		int result = 0;
 		
 		try {
-			result = session.insert("userInsert", userInfo);
+			result = sqls.insert("userInsert", userInfo);
 			System.out.println("join Dao insertResult -> " + result);
 		} catch (Exception e) {
 			System.out.println("join Dao Exception -> " + e.getMessage());
@@ -38,7 +38,7 @@ public class CommonDaoImpl implements CommonDao {
 		UserInfo userCheck = new UserInfo();
 		
 		try {
-			userCheck = session.selectOne("userCheck", userInfo);
+			userCheck = sqls.selectOne("userCheck", userInfo);
 			System.out.println("login Dao selectResult -> " + userCheck);
 		} catch (Exception e) {
 			System.out.println("login Dao Exception -> " + e.getMessage());

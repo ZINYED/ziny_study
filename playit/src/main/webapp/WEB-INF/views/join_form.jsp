@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/header_main.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,22 +11,22 @@
 	<form action="join" method="post">
 		<table>
 			<tr>
-				<th>아이디</th><td><input type="text" name="user_id"></td>
+				<th>아이디</th><td><input type="text" name="user_id" required="required"></td>
 			</tr>
 			<tr>
-				<th>비밀번호</th><td><input type="password" name="user_pw"></td>
+				<th>비밀번호</th><td><input type="password" name="user_pw" required="required"></td>
 			</tr>
 			<tr>
-				<th>이름</th><td><input type="text" name="user_name"></td>
+				<th>이름</th><td><input type="text" name="user_name" required="required"></td>
 			</tr>
 			<tr>
-				<th>닉네임</th><td><input type="text" name="user_nick"></td>
+				<th>닉네임</th><td><input type="text" name="user_nick" required="required"></td>
 			</tr>
 			<tr>
-				<th>이메일</th><td><input type="email" name="user_email"></td>
+				<th>이메일</th><td><input type="email" name="user_email" required="required"></td>
 			</tr>
 			<tr>
-				<th>전화번호</th><td><input type="tel" name="user_phone"></td>
+				<th>전화번호</th><td><input type="tel" name="user_phone" required="required"></td>
 			</tr>
 			<tr>
 				<th>생년월일</th><td><input type="date" name="user_birth"></td>
