@@ -27,7 +27,7 @@ public class BoardController {
 	// 자유 게시판 목록
 	@RequestMapping(value = "/board_free_list")
 	public String boardFreeList(HttpSession session, Model model, BdFree bdfree) {
-		System.out.println("board_free Controller");
+		System.out.println("boardFreeList Controller");
 		
 		List<BdFree> freeList = new ArrayList<BdFree>();
 		freeList = bs.freeList();
@@ -37,12 +37,22 @@ public class BoardController {
 		return "/board/board_free/free_list";
 	}
 	
-	// 자유 게시판 작성 페이지 이동
+	// 자유 게시판 게시글 작성 페이지로 이동
 	@RequestMapping(value = "/board_free_write_form")
 	public String boardFreeWriteForm(HttpSession session, Model model, BdFree bdfree) {
-		System.out.println("board_free_write_form Controller");
+		System.out.println("boardFreeWriteForm Controller");
 		
 		return "/board/board_free/free_write";
+	}
+	
+	// 자유 게시판 게시글 작성
+	@RequestMapping(value = "/board_free_write")
+	public String boardFreeWrite(HttpSession session, Model model, BdFree bdfree) {
+		System.out.println("boardFreeWrite");
+		
+		// 세션에서 user id 가져와서 bdfree 작성자에 저장 필요!
+		
+		return "/board/board_free/free_list";
 	}
 	
 }
