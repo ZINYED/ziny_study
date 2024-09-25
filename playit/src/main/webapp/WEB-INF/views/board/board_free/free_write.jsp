@@ -24,15 +24,15 @@
 		</div>
 		<div class="mb-3">
 			<label class="form-label">제목</label>
-			<input type="text" class="form-control" name="subject">
+			<input type="text" class="form-control" name="subject" required="required">
 		</div>
 		<div class="mb-3">
 			<label class="form-label">본문</label>
-			<textarea class="form-control" rows="3" name="doc_body"></textarea>
+			<textarea class="form-control" rows="3" name="doc_body" required></textarea>
 		</div>
 		<div class="mb-3" id="button">
 			<input type="submit" value="작성" class="btn btn-outline-dark">
-			<input type="button" value="취소" class="btn btn-outline-dark">
+			<input type="button" value="취소" class="btn btn-outline-dark" onclick="history.back()">
 		</div>
 	</form>
 </body>

@@ -16,6 +16,7 @@ public class BoardDaoImpl implements BoardDao {
 	
 	private final	SqlSession	sqls;
 	
+	// 자유 게시판 목록
 	@Override
 	public List<BdFree> freeList() {
 		
@@ -29,6 +30,22 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		
 		return freeList;
+	}
+
+	// 자유 게시판 게시글 작성
+	@Override
+	public int freeWrite(BdFree bdfree) {
+		
+		int result = 0;
+		
+		try {
+			result = sqls.insert("freeInsert", bdfree);
+			System.out.println("freeInsert result : " + result);
+		} catch (Exception e) {
+			System.out.println("freeInsert Dao Exception : " + e.getMessage());
+		}
+		
+		return result;
 	}
 
 }

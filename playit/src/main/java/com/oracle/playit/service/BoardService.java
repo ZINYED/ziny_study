@@ -8,4 +8,6 @@ public interface BoardService {
 
 	List<BdFree> freeList();
 
+	int freeWrite(BdFree bdfree);
+
 }

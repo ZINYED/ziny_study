@@ -8,4 +8,6 @@ public interface BoardDao {
 
 	List<BdFree> freeList();
 
+	int freeWrite(BdFree bdfree);
+
 }

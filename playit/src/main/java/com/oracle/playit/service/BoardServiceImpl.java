@@ -16,6 +16,7 @@ public class BoardServiceImpl implements BoardService {
 	
 	private final	BoardDao	bd;
 	
+	// 자유 게시판 목록
 	@Override
 	public List<BdFree> freeList() {
 		
@@ -23,6 +24,17 @@ public class BoardServiceImpl implements BoardService {
 		freeList = bd.freeList();
 		
 		return freeList;
+	}
+	
+	// 자유 게시판 게시글 작성
+	@Override
+	public int freeWrite(BdFree bdfree) {
+		System.out.println("boardFreeWrite Service");
+		
+		int result = bd.freeWrite(bdfree);
+		
+		
+		return result;
 	}
 
 }
