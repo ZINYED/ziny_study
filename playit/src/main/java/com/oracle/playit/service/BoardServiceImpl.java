@@ -16,12 +16,21 @@ public class BoardServiceImpl implements BoardService {
 	
 	private final	BoardDao	bd;
 	
+	// 자유 게시판 전체 게시글 수
+	@Override
+	public int freeTotal() {
+		
+		int result = bd.freeTotal();
+		
+		return result;
+	}
+	
 	// 자유 게시판 목록
 	@Override
-	public List<BdFree> freeList() {
+	public List<BdFree> freeList(BdFree bdfree) {
 		
 		List<BdFree> freeList = new ArrayList<BdFree>();
-		freeList = bd.freeList();
+		freeList = bd.freeList(bdfree);
 		
 		return freeList;
 	}
@@ -36,5 +45,7 @@ public class BoardServiceImpl implements BoardService {
 		
 		return result;
 	}
+
+	
 
 }

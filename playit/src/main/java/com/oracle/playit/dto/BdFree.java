@@ -28,4 +28,10 @@ public class BdFree {
 	
 	// 조회용
 	String		user_nick;
+	
+	// 페이징 작업용
+	private int rn;
+	private String search;   	private String keyword;
+	private String pageNum;		private int total;
+	private int start; 		 	private int end;
 }

@@ -6,8 +6,12 @@ import com.oracle.playit.dto.BdFree;
 
 public interface BoardDao {
 
-	List<BdFree> freeList();
+	int freeTotal();
+	
+	List<BdFree> freeList(BdFree bdfree);
 
 	int freeWrite(BdFree bdfree);
+
+	
 
 }

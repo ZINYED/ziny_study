@@ -11,15 +11,26 @@
 </script>
 </head>
 <body>
-	<div>
-		<ul>
-			<li>공지 게시판</li>
-			<li>추천 게시판</li>
-			<li onclick="location.href='/board_free_list'">자유 게시판</li>
-			<li>질문 게시판</li>
-		</ul>
-		
-		<button onclick="location.href='/logout'">로그아웃</button>
-	</div>
+	<!-- 내비게이션 바 -->
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">PLAYIT</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" href="#">공지</a>
+					<a class="nav-link" href="#">추천</a>
+					<a class="nav-link" href="/board_free_list">자유</a>
+					<a class="nav-link" href="#">질문</a>
+				</div>
+				<div>
+					<button class="btn btn-outline-secondary">My Page</button>
+					<button class="btn btn-outline-secondary" onclick="location.href='/logout'">로그아웃</button>
+				</div>
+			</div>
+		</div>
+	</nav>
 </body>
 </html>

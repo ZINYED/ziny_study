@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.oracle.playit.dto.BdFree;
+import com.oracle.playit.dto.Paging;
 import com.oracle.playit.dto.UserInfo;
 import com.oracle.playit.service.BoardService;
 
@@ -28,12 +29,23 @@ public class BoardController {
 	
 	// 자유 게시판 목록
 	@RequestMapping(value = "/board_free_list")
-	public String boardFreeList(HttpSession session, Model model, BdFree bdfree, HttpServletRequest request) {
+	public String boardFreeList(Model model, BdFree bdfree, String currentPage) {
 		System.out.println("boardFreeList Controller");
 		
+		int freeTotal = bs.freeTotal();
+		model.addAttribute("freeTotal", freeTotal);
+		
+		// 페이징
+		Paging page = new Paging(freeTotal, currentPage, 10);
+		bdfree.setStart(page.getStart());
+		bdfree.setEnd(page.getEnd());
+		
+		model.addAttribute("page", page);
+		
+		// 자유 게시판 리스트 가져오기 (페이징 작업 추가)
 		List<BdFree> freeList = new ArrayList<BdFree>();
-		freeList = bs.freeList();
-
+		freeList = bs.freeList(bdfree);
+		
 		model.addAttribute("freeList", freeList);
 		
 		return "/board/board_free/free_list";
@@ -41,7 +53,7 @@ public class BoardController {
 	
 	// 자유 게시판 게시글 작성 페이지로 이동
 	@RequestMapping(value = "/board_free_write_form")
-	public String boardFreeWriteForm(Model model, BdFree bdfree, HttpServletRequest request) {
+	public String boardFreeWriteForm() {
 		System.out.println("boardFreeWriteForm Controller");
 		
 		return "/board/board_free/free_write";
@@ -60,7 +72,7 @@ public class BoardController {
 		int result = bs.freeWrite(bdfree);
 		
 		// 데이터는 삽입되지만 redirect로 페이지 이동 불가한 상황. 수정 필요!!!		
-		return "redirect:/board/board_free/free_list";
+		return "redirect:/board_free_list";
 	}
 	
 }
