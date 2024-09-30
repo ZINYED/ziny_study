@@ -60,7 +60,7 @@
 				<tr>
 					<td id="row_num">${status.count}</td>
 					<td id="category">${free.category}</td>
-					<td id="subject">${free.subject}</td>
+					<td id="subject"><a href="/board_free_read?doc_no=${free.doc_no}">${free.subject}</a></td>
 					<td id="user_nick">${free.user_nick}</td>
 					<td id="read_count">${free.read_count}</td>
 					<td id="good_count">${free.good_count}</td>

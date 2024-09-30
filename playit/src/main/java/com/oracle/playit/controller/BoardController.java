@@ -75,4 +75,14 @@ public class BoardController {
 		return "redirect:/board_free_list";
 	}
 	
+	// 자유 게시판 상세 페이지
+	@RequestMapping(value = "/board_free_read")
+	public String boardFreeRead(Model model, BdFree bdfree, HttpServletRequest request) {
+		System.out.println("boardFreeRead Controller");
+		
+		System.out.println("글 번호 : " + bdfree.getDoc_no());
+		
+		return "/board/board_free/free_read";
+	}
+	
 }
