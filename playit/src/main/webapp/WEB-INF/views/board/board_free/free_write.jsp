@@ -14,7 +14,7 @@
 </style>
 </head>
 <body>
-	<form action="board_free_write" method="post">
+	<form action="board_free_write" method="post" enctype="multipart/form-data">
 		<div class="mb-3">
 			<label class="form-label">카테고리</label>
 			<select class="form-control" name="category">
@@ -25,6 +25,11 @@
 		<div class="mb-3">
 			<label class="form-label">제목</label>
 			<input type="text" class="form-control" name="subject" required="required">
+		</div>
+		<div class="mb-3">
+			<label class="col-form-label">첨부파일</label>
+			<input type="file" class="form-control form-control-sm" id="file" name="file1">
+			<label class="custom-file-label" for="file"></label>
 		</div>
 		<div class="mb-3">
 			<label class="form-label">본문</label>
