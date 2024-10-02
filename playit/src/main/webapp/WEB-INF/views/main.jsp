@@ -11,7 +11,7 @@
 </script>
 </head>
 <body>
-	<!-- 내비게이션 바 -->
+	<!-- 상단 내비게이션 바 -->
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">PLAYIT</a>

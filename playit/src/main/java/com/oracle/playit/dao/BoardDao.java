@@ -12,6 +12,10 @@ public interface BoardDao {
 
 	int freeWrite(BdFree bdfree);
 
+	BdFree freeRead(int doc_no);
+
+	int freeDelete(int doc_no);
+
 	
 
 }

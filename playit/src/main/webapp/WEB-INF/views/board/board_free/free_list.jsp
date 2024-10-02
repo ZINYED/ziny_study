@@ -24,7 +24,7 @@
 </style>
 </head>
 <body>
-	<!-- 내비게이션 바 -->
+	<!-- 상단 내비게이션 바 -->
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">PLAYIT</a>
@@ -46,6 +46,7 @@
 		</div>
 	</nav>
 	
+	<!-- 본문 -->
 	<%-- <h6 id="total">총 건수 : ${freeTotal} </h6> --%>
 	<button onclick="location.href='/board_free_write_form'">작성</button>
 	<table class="table" id="freeList">

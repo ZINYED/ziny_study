@@ -14,6 +14,29 @@
 </style>
 </head>
 <body>
+	<!-- 상단 내비게이션 바 -->
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">PLAYIT</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" href="#">공지</a>
+					<a class="nav-link" href="#">추천</a>
+					<a class="nav-link" href="/board_free_list">자유</a>
+					<a class="nav-link" href="#">질문</a>
+				</div>
+				<div>
+					<button class="btn btn-outline-secondary">My Page</button>
+					<button class="btn btn-outline-secondary" onclick="location.href='/logout'">로그아웃</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<!-- 본문 -->
 	<form action="board_free_write" method="post" enctype="multipart/form-data">
 		<div class="mb-3">
 			<label class="form-label">카테고리</label>

@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.oracle.playit.dto.BdFree;
@@ -131,9 +132,34 @@ public class BoardController {
 	public String boardFreeRead(Model model, BdFree bdfree, HttpServletRequest request) {
 		System.out.println("boardFreeRead Controller");
 		
-		System.out.println("글 번호 : " + bdfree.getDoc_no());
+		UserInfo userInfo = (UserInfo) request.getSession().getAttribute("userInfo");
+		
+		int doc_no = bdfree.getDoc_no();
+		bdfree = bs.freeRead(doc_no);
+		
+		// 작성자와 접속한 유저가 동일한 경우 result = 1 return
+		int result = 0;
+		if (bdfree.getUser_id().equals(userInfo.getUser_id())) {
+			result = 1;
+		}
+		
+		model.addAttribute("result", result);
+		model.addAttribute("freeContent", bdfree);
 		
 		return "/board/board_free/free_read";
+	}
+	
+	// 자유 게시판 게시글 삭제
+	@ResponseBody
+	@RequestMapping(value = "/board_free_delete")
+	public int boardFreeDelete(Model model, BdFree bdfree, HttpServletRequest request) {
+		System.out.println("boardFreeDelete Controller");
+		
+		int doc_no = bdfree.getDoc_no();
+		
+		int result = bs.freeDelete(doc_no);
+		
+		return result;
 	}
 	
 }

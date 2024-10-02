@@ -38,10 +38,30 @@ public class BoardServiceImpl implements BoardService {
 	// 자유 게시판 게시글 작성
 	@Override
 	public int freeWrite(BdFree bdfree) {
-		System.out.println("boardFreeWrite Service");
+		// System.out.println("boardFreeWrite Service");
 		
 		int result = bd.freeWrite(bdfree);
 		
+		return result;
+	}
+
+	// 자유 게시판 상세 페이지
+	@Override
+	public BdFree freeRead(int doc_no) {
+		// System.out.println("boardFreeRead Service");
+		
+		BdFree bdfree = new BdFree();
+		bdfree = bd.freeRead(doc_no);
+		
+		return bdfree;
+	}
+
+	// 자유 게시판 게시글 삭제
+	@Override
+	public int freeDelete(int doc_no) {
+		System.out.println("boardFreeDelete Service");
+		
+		int result = bd.freeDelete(doc_no);
 		
 		return result;
 	}

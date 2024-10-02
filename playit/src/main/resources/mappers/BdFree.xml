@@ -32,4 +32,19 @@
 		VALUES (seq_bd_free_doc_no.nextval, #{user_id}, SYSDATE, #{category}, #{subject}, #{doc_body}, #{attach_path}, #{attach_name})
 	</insert>
 	
+	<!-- 자유 게시판 상세 페이지 -->
+	<select id="freeSelect" parameterType="int" resultType="BdFree">
+		SELECT	f.*, u.user_nick
+		FROM	BD_FREE f, USER_INFO u
+		WHERE	f.doc_no = #{doc_no}
+		AND		f.user_id = u.user_id
+	</select>
+	
+	<!-- 자유 게시판 게시글 삭제 -->
+	<delete id="freeDelete" parameterType="int">
+		DELETE	FROM BD_FREE
+		WHERE	doc_no = #{doc_no}	
+	</delete>
+	
+	
 </mapper>
