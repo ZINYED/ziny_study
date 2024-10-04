@@ -77,7 +77,7 @@
 					
 					<!-- 작성자인 경우 보이도록 result = 1 -->
 					<c:if test="${result == 1}">
-						<input type="button" class="btn btn-dark btn-sm" value="수정" onclick="">
+						<input type="button" class="btn btn-dark btn-sm" value="수정" onclick="location.href='board_free_edit_form?doc_no=${freeContent.doc_no}'">
 					</c:if>
 					<c:if test="${result == 1}">
 						<input type="button" class="btn btn-dark btn-sm" value="삭제" onclick="delchk()">

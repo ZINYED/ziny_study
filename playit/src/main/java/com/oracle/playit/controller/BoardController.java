@@ -162,4 +162,17 @@ public class BoardController {
 		return result;
 	}
 	
+	// 자유 게시판 게시글 수정
+	@RequestMapping(value = "/board_free_edit_form")
+	public String boardFreeEdit(Model model, BdFree bdfree, HttpServletRequest request, int doc_no) {
+		System.out.println("boardFreeEdit Controller");
+		
+		bdfree = bs.freeRead(doc_no);
+		
+		model.addAttribute("freeContent", bdfree);
+		
+		return "/board/board_free/free_edit";
+	}
+	
+	
 }
