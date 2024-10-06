@@ -29,7 +29,8 @@
 	<!-- 자유 게시판 게시글 작성 -->
 	<insert id="freeInsert" parameterType="BdFree">
 		INSERT INTO BD_FREE (doc_no, user_id, create_date, category, subject, doc_body, attach_path, attach_name) 
-		VALUES (seq_bd_free_doc_no.nextval, #{user_id}, SYSDATE, #{category}, #{subject}, #{doc_body}, #{attach_path}, #{attach_name})
+		VALUES (seq_bd_free_doc_no.nextval, #{user_id}, SYSDATE, #{category}, #{subject}, #{doc_body}, 
+				#{attach_path, jdbcType=VARCHAR}, #{attach_name, jdbcType=VARCHAR})
 	</insert>
 	
 	<!-- 자유 게시판 상세 페이지 -->

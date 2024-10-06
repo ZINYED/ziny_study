@@ -99,7 +99,11 @@
 			<tr><th>작성자</th><td colspan="3">${freeContent.user_nick}</td></tr>
 			<tr><th>작성일</th><td><fmt:formatDate value="${freeContent.create_date}" pattern="yyyy-MM-dd"/></td>
 				<th>수정일</th><td><fmt:formatDate value="${freeContent.modify_date}" pattern="yyyy-MM-dd"/></td></tr>
-			<tr><th>본문</th><td colspan="3">${freeContent.doc_body}</td>
+			<tr><th>본문</th>
+				<td colspan="3">
+					<pre>${freeContent.doc_body}</pre>
+				</td>
+			</tr>
 			<tr><th>조회수</th><td>${freeContent.read_count}</td>
 				<th>추천</th><td>${freeContent.good_count}</td></tr>
 			<tr><th>첨부파일</th>
