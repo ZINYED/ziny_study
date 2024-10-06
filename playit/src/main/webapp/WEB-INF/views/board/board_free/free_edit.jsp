@@ -41,8 +41,14 @@
 		<div class="mb-3">
 			<label class="form-label">카테고리</label>
 			<select class="form-control" name="category">
-				<option value="자유">자유</option>
-				<option value="후기">후기</option>
+				<c:if test="${freeContent.category == '자유'}">
+					<option value="자유" selected="selected">자유</option>
+					<option value="후기">후기</option>
+				</c:if>
+				<c:if test="${freeContent.category == '후기'}">
+					<option value="자유">자유</option>
+					<option value="후기" selected="selected">후기</option>
+				</c:if>
 			</select>
 		</div>
 		<div class="mb-3">
@@ -56,10 +62,10 @@
 		</div>
 		<div class="mb-3">
 			<label class="form-label">본문</label>
-			<textarea class="form-control" rows="3" name="doc_body" required></textarea>
+			<textarea class="form-control" rows="3" name="doc_body" required>${freeContent.doc_body }</textarea>
 		</div>
 		<div class="mb-3" id="button">
-			<input type="submit" value="작성" class="btn btn-outline-dark">
+			<input type="submit" value="수정" class="btn btn-outline-dark">
 			<input type="button" value="취소" class="btn btn-outline-dark" onclick="history.back()">
 		</div>
 	</form>
